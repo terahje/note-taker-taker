@@ -31,6 +31,24 @@ app.post("/api/notes", function (req, res) {
     return res.status(200).end();
 });
 
+app.delete("/api/notes/:id", function(req, res) {
+    res.send('Got a DELETE request at /api/notes/:id')
+
+    var id = req.params.id;
+
+    var idLess = notes.filter(function (less) {
+        return less.id < id;
+    });
+
+    var idGreater = notes.filter(function (greater) {
+        return greater.id > id;
+    });
+
+    notes = idLess.concat(idGreater);
+
+    rewriteNotes();
+})
+
 function rewriteNotes() {
     fs.writeFile("db/db.json", JSON.stringify(notes), function(err) {
         if(err) {
