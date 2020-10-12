@@ -5,7 +5,7 @@ Express.js: Note Taker
 
 - https://safe-refuge-35917.herokuapp.com/
 
-![](assets/images/screenshot.jpg)
+![](images/ntscreenshot.jpg)
 
 ## Description
 A Note Taker app that allows you to keep track of vitale notes in a easy to view manner.  You can easily add notes throughout the day and easily delete those you've already completed.
